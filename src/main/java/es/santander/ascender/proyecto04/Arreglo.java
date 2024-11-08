@@ -38,5 +38,19 @@ public class Arreglo {
         return destino;
     }
 
+    public float devolverValorEnIndice(float[] lista, int indiceABuscar) throws Exception {
+
+        if (indiceABuscar < 0) {
+            throw new Exception("Me has pedido un índice negativo");
+        } else {
+            if (indiceABuscar >= lista.length) {
+                throw new Exception("Me has pedido un índice mayor de lo permitido" + indiceABuscar);
+            }
+        }
+
+        return lista [indiceABuscar];
+        
+    }
+
 
 }
