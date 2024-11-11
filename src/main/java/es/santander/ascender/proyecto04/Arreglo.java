@@ -21,35 +21,50 @@ public class Arreglo {
         destino[destino.length-2] = origen [1];
         destino[destino.length-3] = origen [2];
 
-        destino[0] = origen [origen.length-1];
+        destino[0] = origen [origen.length -1];
         */
 
         /* 
-        for(int i = 0 ; j = destomgp.length - 1 ; i < oringen.length && j >= 0; i = i + 1 , j = j -1){
+        for(int i = 0 ; j = destino.length - 1 ; i < oringen.length && j >= 0; i = i + 1 , j = j -1){
 
             destino[j] = origen[i]
             }
         */   
 
         for(int i = 0; i < origen.length ; i = i + 1) {
-            destino[destino.length - i] = origen [i];
+            destino[destino.length - (i + 1)] = origen [i];
         }
 
         return destino;
     }
 
-    public float devolverValorEnIndice(float[] lista, int indiceABuscar) throws Exception {
+    public float devolverValorEnIndice(float[] lista, int indiceABuscar) throws Exception  {
 
         if (indiceABuscar < 0) {
-            throw new Exception("Me has pedido un índice negativo");
+            throw new Exception("Me has pedido un índice negativo"+ indiceABuscar);
         } else {
             if (indiceABuscar >= lista.length) {
                 throw new Exception("Me has pedido un índice mayor de lo permitido" + indiceABuscar);
             }
         }
-
         return lista [indiceABuscar];
         
+    }
+
+    public double sumarValores(double[] valores) {
+        double suma = 0.0;
+
+        for (int i = 0; i < valores.length; i++) {
+            suma = suma + valores[i];
+        }
+
+        return suma;
+    }
+
+    public double calcularMediaValores(double[] valores) {
+        double suma = sumarValores(valores);
+
+        return suma/valores.length; 
     }
 
 
